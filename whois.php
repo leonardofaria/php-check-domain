@@ -284,7 +284,10 @@
 		function check_availability($dom){
 			$string = get_content($dom);
 
-			if (strpos($string, "No match for") > 0) {
+			if (
+				strpos($string, "No match for") > 0 ||
+				strpos($string, "No entries found") > 0
+			) {
 				return true;
 			} else {
 				return false;
